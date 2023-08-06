@@ -30,11 +30,48 @@ class Client {
     }
 
     // Rest of the methods go here
-    // Implement all the necessary methods here
-    // For example:
-    // public async load_db(db_name: string, db_path: string) {
-    //     // Implementation goes here
-    // }
-    // Repeat for all the necessary methods
+    public async welcome() {
+        // Implementation goes here
+    }
+
+    public async state() {
+        // Implementation goes here
+    }
+
+    public async use_db(db_name: string) {
+        // Implementation goes here
+    }
+
+    public async load_db(db_name: string, db_path: string) {
+        // Implementation goes here
+    }
+
+    public async unload_db(db_name: string) {
+        // Implementation goes here
+    }
+
+    public async create_table(table_name: string, table_fields: any[]) {
+        // Implementation goes here
+    }
+
+    public async insert(table_name: string, records: any[]) {
+        // Implementation goes here
+    }
+
+    public async query(table_name: string, query_field: string, query_vector: any[], response_fields: any[], limit: number, with_distance: boolean) {
+        // Implementation goes here
+    }
+
+    public async get(table_name: string, response_fields: any[]) {
+        // Implementation goes here
+    }
+
+    public async drop_table(table_name: string) {
+        // Implementation goes here
+    }
+
+    public async drop_db(db_name: string) {
+        // Implementation goes here
+    }
     }
     // Newline at the end of the file
