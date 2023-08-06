@@ -1,4 +1,4 @@
-class Field {
+export class Field {
     private name: string;
     private data_type: FieldType;
     private primary_key: boolean;
@@ -9,10 +9,15 @@ class Field {
         this.data_type = data_type;
         this.primary_key = primary_key;
         this.dimensions = dimensions;
+        if (data_type === FieldType.UNKNOWN) {
+            // Handle the case where the field type is UNKNOWN
+        }
     }
+
+    // Add methods for manipulating or retrieving the field data here
 }
 
-enum FieldType {
+export enum FieldType {
     INT1 = 1,  // TINYINT
     INT2 = 2,  // SMALLINT
     INT4 = 3,  // INT
