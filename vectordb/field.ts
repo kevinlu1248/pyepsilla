@@ -1,4 +1,4 @@
-enum FieldType {
+export enum FieldType {
     INT1 = 1,  // TINYINT
     INT2 = 2,  // SMALLINT
     INT4 = 3,  // INT
@@ -12,7 +12,7 @@ enum FieldType {
     UNKNOWN = 999
 }
 
-class Field {
+export class Field {
     private name: string;
     private dataType: FieldType;
     private primaryKey: boolean;
