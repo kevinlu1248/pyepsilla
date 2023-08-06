@@ -30,4 +30,11 @@ class Client {
     }
 
     // Rest of the methods go here
-}
+    // Implement all the necessary methods here
+    // For example:
+    // public async load_db(db_name: string, db_path: string) {
+    //     // Implementation goes here
+    // }
+    // Repeat for all the necessary methods
+    }
+    // Newline at the end of the file
