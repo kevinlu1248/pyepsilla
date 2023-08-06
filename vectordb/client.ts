@@ -5,8 +5,9 @@ class Client {
     private host: string;
     private port: string;
     private baseurl: string;
-    private db: string | null;
-    private timeout: number;
+    // Removed unused property
+    // timeout is in milliseconds
+    private timeout: number = 1000;
     private header: object;
 
     constructor(protocol = 'http', host='localhost', port='8888') {
@@ -14,10 +15,8 @@ class Client {
         this.host = host;
         this.port = port;
         this.baseurl = `${this.protocol}://${this.host}:${this.port}`;
-        this.db = null;
-        this.timeout = 10;
+        this.timeout = 1000;
         this.header = {'Content-type': 'application/json'};
-        this.check_networking();
     }
 
     private async check_networking() {
@@ -31,8 +30,13 @@ class Client {
 
     public async welcome() {
         const response = await axios.get(`${this.baseurl}/`, {headers: this.header, timeout: this.timeout});
-        return response.status, response.data;
+        return {status: response.status, data: response.data};
     }
 
     // Implement the rest of the methods here, following the same pattern as the welcome method.
+    // For example:
+    // public async someMethod() {
+    //     const response = await axios.get(`${this.baseurl}/someEndpoint`, {headers: this.header, timeout: this.timeout});
+    //     return {status: response.status, data: response.data};
+    // }
 }
