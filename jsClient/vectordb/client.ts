@@ -1,4 +1,6 @@
-class Client {
+import fetch from 'node-fetch';
+
+export class Client {
     private _protocol: string;
     private _host: string;
     private _port: string;
@@ -30,5 +32,6 @@ class Client {
         }
     }
 
-    // Rest of the methods go here
+    // Implement the remaining methods for interacting with the vector database here
+    // These methods should mirror the functionality of the Python client
 }
