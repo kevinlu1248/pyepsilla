@@ -72,6 +72,8 @@ client.unload_db("MyDB")
 
 ## 3. Use TypeScript client to connect to and interact with vector database
 
+Note: The following TypeScript code is provided for users who prefer to use TypeScript or for those who are working in a JavaScript environment.
+
 ```typescript
 import { Client, FieldType } from 'pyepsilla';
 
