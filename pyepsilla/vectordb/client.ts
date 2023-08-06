@@ -31,47 +31,47 @@ class Client {
 
     // Rest of the methods go here
     public async welcome() {
-        // Implementation goes here
+        // Add the implementation for the 'welcome' method here
     }
 
     public async state() {
-        // Implementation goes here
+        // Add the implementation for the 'state' method here
     }
 
     public async use_db(db_name: string) {
-        // Implementation goes here
+        // Add the implementation for the 'use_db' method here
     }
 
     public async load_db(db_name: string, db_path: string) {
-        // Implementation goes here
+        // Add the implementation for the 'load_db' method here
     }
 
     public async unload_db(db_name: string) {
-        // Implementation goes here
+        // Add the implementation for the 'unload_db' method here
     }
 
     public async create_table(table_name: string, table_fields: any[]) {
-        // Implementation goes here
+        // Add the implementation for the 'create_table' method here
     }
 
     public async insert(table_name: string, records: any[]) {
-        // Implementation goes here
+        // Add the implementation for the 'insert' method here
     }
 
     public async query(table_name: string, query_field: string, query_vector: any[], response_fields: any[], limit: number, with_distance: boolean) {
-        // Implementation goes here
+        // Add the implementation for the 'query' method here
     }
 
     public async get(table_name: string, response_fields: any[]) {
-        // Implementation goes here
+        // Add the implementation for the 'get' method here
     }
 
     public async drop_table(table_name: string) {
-        // Implementation goes here
+        // Add the implementation for the 'drop_table' method here
     }
 
     public async drop_db(db_name: string) {
-        // Implementation goes here
+        // Add the implementation for the 'drop_db' method here
     }
     }
     // Newline at the end of the file
