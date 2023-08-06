@@ -31,7 +31,7 @@ class Client {
 
     // Rest of the methods go here
     public async welcome() {
-        // Add the implementation for the 'welcome' method here
+        return "Welcome to EpsillaDB!";
     }
 
     public async state() {
