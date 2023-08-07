@@ -24,11 +24,13 @@ class Client {
       const response = await fetch(this._baseurl, { timeout: this._timeout });
       if (response.ok) {
         console.log(`[INFO] Connected to ${this._host}:${this._port} successfully.`);
+        return true;
       } else {
         throw new Error(`[ERROR] Failed to connect to ${this._host}:${this._port}`);
       }
     } catch (error) {
       console.error(error);
+      return false;
     }
   }
 
