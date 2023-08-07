@@ -21,7 +21,14 @@ class Client {
     }
 
     private async check_networking() {
-        // Implement network check
+        try {
+            const response = await fetch(this.baseurl);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            console.error('There has been a problem with your fetch operation: ', error);
+        }
     }
 
     public async welcome() {
@@ -32,6 +39,14 @@ class Client {
         return { status_code, body };
     }
 
-    // Implement remaining methods...
+    public async state() {
+        const req_url = `${this.baseurl}/state`;
+        const res = await fetch(req_url, { method: 'GET', headers: this.header });
+        const status_code = res.status;
+        const body = await res.json();
+        return { status_code, body };
+    }
+    
+    // Implement other methods as needed...
 }
 export default Client;
