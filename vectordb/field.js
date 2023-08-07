@@ -1,18 +1,21 @@
 class DB {
-    constructor() {
-        // Implement constructor
+    constructor(name) {
+        this.name = name;
     }
 }
 
 class Table {
-    constructor() {
-        // Implement constructor
+    constructor(name) {
+        this.name = name;
     }
 }
 
 class Field {
     constructor(name, data_type, primary_key, dimensions) {
-        // Implement constructor
+        this.name = name;
+        this.data_type = data_type;
+        this.primary_key = primary_key;
+        this.dimensions = dimensions;
     }
 }
 
