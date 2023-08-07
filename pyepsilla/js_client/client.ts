@@ -5,7 +5,6 @@ class Client {
   private _host: string;
   private _port: string;
   private _baseurl: string;
-  private _db: string | null;
   private _timeout: number;
   private _header: { 'Content-type': string };
 
