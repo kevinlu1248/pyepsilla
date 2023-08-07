@@ -1,6 +1,6 @@
 interface Field {
   name: string;
-  data_type: string;
-  primary_key?: boolean;
-  dimensions?: number;
+  data_type: FieldType;
+  primary_key: boolean;
+  dimensions: number;
 }
