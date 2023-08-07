@@ -33,5 +33,4 @@ class Client {
     }
   }
 
-  // Implement the rest of the methods...
-}
+  }
