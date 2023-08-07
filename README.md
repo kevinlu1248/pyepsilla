@@ -1,12 +1,22 @@
 # Epsilla Python SDK
 
 ## 1.Installation
+For Python:
 ```shell
 pip3 install pyepsilla
 ```
 or
 ```shell
 pip3 install --upgrade pyepsilla
+```
+
+For JavaScript/TypeScript:
+```shell
+npm install vectordb
+```
+or
+```shell
+yarn add vectordb
 ```
 
 ## 2.Documentation
@@ -115,9 +125,8 @@ client.drop_table("MyTable");
 client.unload_db("MyDB");
 ```
 
-You can find the JavaScript/TypeScript client files [here](link_to_files).
+You can find the JavaScript/TypeScript client files [here](https://github.com/username/repo/tree/main/vectordb).
 
 ## 4.FAQ
 
 https://pypi.org/project/pyepsilla/#history
-
