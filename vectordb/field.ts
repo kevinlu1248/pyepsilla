@@ -25,7 +25,23 @@ class Field {
         this.dimensions = dimensions;
     }
 
-    // Implement remaining methods...
+    public getName(): string {
+        return this.name;
+    }
+    
+    public getDataType(): FieldType {
+        return this.data_type;
+    }
+    
+    public isPrimaryKey(): boolean {
+        return this.primary_key;
+    }
+    
+    public getDimensions(): number {
+        return this.dimensions;
+    }
+    
+    // Implement other methods as needed...
 }
 
 export { FieldType, Field };
