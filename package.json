@@ -1,0 +1,16 @@
+{
+  "name": "vectordb",
+  "version": "1.0.0",
+  "description": "JavaScript/TypeScript client for EpsillaDB",
+  "main": "vectordb/client.ts",
+  "types": "vectordb/client.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["vectordb", "EpsillaDB", "client"],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
