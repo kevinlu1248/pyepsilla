@@ -23,11 +23,23 @@ class Client {
   }
 
   welcome() {
-    // Implement welcome request
+    axios.get(`${this._baseurl}/`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   state() {
-    // Implement state request
+    axios.get(`${this._baseurl}/state`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   use_db(db_name) {
@@ -35,35 +47,83 @@ class Client {
   }
 
   load_db(db_name, db_path, vector_scale=null, wal_enabled=null) {
-    // Implement load_db request
+    axios.post(`${this._baseurl}/api/load`, {name: db_name, path: db_path, vectorScale: vector_scale, walEnabled: wal_enabled})
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   unload_db(db_name) {
-    // Implement unload_db request
+    axios.post(`${this._baseurl}/api/${db_name}/unload`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   create_table(table_name="MyTable", table_fields=[]) {
-    // Implement create_table request
+    axios.post(`${this._baseurl}/api/${this._db}/schema/tables`, {name: table_name, fields: table_fields})
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   insert(table_name="MyTable", records=[]) {
-    // Implement insert request
+    axios.post(`${this._baseurl}/api/${this._db}/data/insert`, {table: table_name, data: records})
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   query(table_name="MyTable", query_field="", query_vector=[], response_fields=[], limit=1, with_distance=false) {
-    // Implement query request
+    axios.post(`${this._baseurl}/api/${this._db}/data/query`, {table: table_name, queryField: query_field, queryVector: query_vector, response: response_fields, limit: limit, withDistance: with_distance})
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   get(table_name="MyTable", response_fields=[]) {
-    // Implement get request
+    axios.post(`${this._baseurl}/api/${this._db}/data/get`, {table: table_name, response: response_fields})
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   drop_table(table_name="MyTable") {
-    // Implement drop_table request
+    axios.delete(`${this._baseurl}/api/${this._db}/schema/tables/${table_name}`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   drop_db(db_name) {
-    // Implement drop_db request
+    axios.delete(`${this._baseurl}/api/${db_name}/drop`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 }
 
