@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 class Client {
     private protocol: string;
     private host: string;
@@ -20,7 +22,7 @@ class Client {
 
     private async check_networking() {
         try {
-            const response = await fetch(`${this.baseurl}/`, { method: 'GET', headers: this.header });
+            const response = await fetch(`${this.baseurl}/`, { method: 'GET', headers: this.header, timeout: this.timeout });
             if (!response.ok) {
                 throw new Error(`Network response was not ok, status: ${response.status}`);
             }
@@ -32,14 +34,13 @@ class Client {
     }
 
     async welcome() {
-        const response = await fetch(`${this.baseurl}/`, { method: 'GET', headers: this.header });
+        const response = await fetch(`${this.baseurl}/`, { method: 'GET', headers: this.header, timeout: this.timeout });
         if (!response.ok) {
             throw new Error(`Network response was not ok, status: ${response.status}`);
         }
         const body = await response.text();
-        return response.status, body;
+        return { status: response.status, body: body };
     }
 
-    // Rest of the methods go here, following the same pattern
 }
 export default Client;
