@@ -1,4 +1,18 @@
 const axios = require('axios');
+const winston = require('winston');
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+});
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
 
 class Client {
   constructor(protocol = 'http', host='localhost', port='8888') {
@@ -15,10 +29,10 @@ class Client {
   check_networking() {
     axios.get(this._baseurl)
       .then(response => {
-        console.log(`[INFO] Connected to ${this._host}:${this._port} successfully.`);
+        logger.info(`[INFO] Connected to ${this._host}:${this._port} successfully.`);
       })
       .catch(error => {
-        console.error(`[ERROR] Failed to connect to ${this._host}:${this._port}`);
+        logger.error(`[ERROR] Failed to connect to ${this._host}:${this._port}`);
       });
   }
 
