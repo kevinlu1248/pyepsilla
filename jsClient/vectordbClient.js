@@ -26,6 +26,60 @@ class Client {
     }
 
     // Implement other methods from vectordb/client.py
+    // Implement welcome method
+    welcome() {
+        // Implementation goes here
+    }
+    
+    // Implement state method
+    state() {
+        // Implementation goes here
+    }
+    
+    // Implement use_db method
+    use_db(db_name) {
+        // Implementation goes here
+    }
+    
+    // Implement load_db method
+    load_db(db_name, db_path, vector_scale, wal_enabled) {
+        // Implementation goes here
+    }
+    
+    // Implement unload_db method
+    unload_db(db_name) {
+        // Implementation goes here
+    }
+    
+    // Implement create_table method
+    create_table(table_name, table_fields) {
+        // Implementation goes here
+    }
+    
+    // Implement insert method
+    insert(table_name, records) {
+        // Implementation goes here
+    }
+    
+    // Implement query method
+    query(table_name, query_field, query_vector, response_fields, limit, with_distance) {
+        // Implementation goes here
+    }
+    
+    // Implement get method
+    get(table_name, response_fields) {
+        // Implementation goes here
+    }
+    
+    // Implement drop_table method
+    drop_table(table_name) {
+        // Implementation goes here
+    }
+    
+    // Implement drop_db method
+    drop_db(db_name) {
+        // Implementation goes here
+    }
 }
 
 class Field {
