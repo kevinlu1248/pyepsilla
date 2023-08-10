@@ -77,7 +77,7 @@ The EpsillaDB now also provides a JavaScript/TypeScript client, which mirrors th
 Here is a basic usage example:
 
 ```javascript
-import { Client } from 'pyepsilla/vectordb';
+import { Client } from 'epsilla/vectordb';
 
 // connect to vectordb
 const client = new Client('localhost', '8888');
@@ -123,4 +123,3 @@ You can find the JavaScript/TypeScript client in the `pyepsilla/vectordb` direct
 ## 4.FAQ
 
 https://pypi.org/project/pyepsilla/#history
-
