@@ -70,8 +70,47 @@ client.drop_table("MyTable")
 client.unload_db("MyDB")
 ```
 
-## 3.FAQ
+## 3. JavaScript/TypeScript Client Usage
+
+```javascript
+// Import the vectordb client
+const vectordb = require('vectordb');
+
+// Connect to vectordb
+let client = new vectordb.Client('localhost', '8888');
+
+// Load and use a database
+client.load_db("MyDB", "/tmp/epsilla");
+client.use_db("MyDB");
+
+// Create a table in the current database
+client.create_table("MyTable", [
+  {"name": "ID", "dataType": "INT"},
+  {"name": "Doc", "dataType": "STRING"},
+  {"name": "Embedding", "dataType": "VECTOR_FLOAT", "dimensions": 4}
+]);
+
+// Insert records
+client.insert("MyTable", [
+  {"ID": 1, "Doc": "Berlin", "Embedding": [0.05, 0.61, 0.76, 0.74]},
+  {"ID": 2, "Doc": "London", "Embedding": [0.19, 0.81, 0.75, 0.11]},
+  {"ID": 3, "Doc": "Moscow", "Embedding": [0.36, 0.55, 0.47, 0.94]},
+  {"ID": 4, "Doc": "San Francisco", "Embedding": [0.18, 0.01, 0.85, 0.80]},
+  {"ID": 5, "Doc": "Shanghai", "Embedding": [0.24, 0.18, 0.22, 0.44]}
+]);
+
+// Search
+let response = client.query("MyTable", "Embedding", [0.35, 0.55, 0.47, 0.94], 2);
+console.log(response);
+
+// Drop a table
+client.drop_table("MyTable");
+
+// Unload a database from memory
+client.unload_db("MyDB");
+```
+
+## 4.FAQ
 
 https://pypi.org/project/pyepsilla/#history
-
 
