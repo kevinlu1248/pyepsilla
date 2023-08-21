@@ -1,12 +1,12 @@
-# Epsilla Python SDK
+# Epsilla JavaScript SDK
 
 ## 1.Installation
 ```shell
-pip3 install pyepsilla
+npm install epsilla-js
 ```
 or
 ```shell
-pip3 install --upgrade pyepsilla
+npm update epsilla-js
 ```
 
 ## 2.Documentation
@@ -19,14 +19,16 @@ docker run -d -p 8888:8888 epsilla/vectordb
 
 ### 2.2 Use pyepsilla to connect to and interact with vector database
 
-```python
-from pyepsilla import vectordb
+```javascript
+const vectordb = require('epsilla-js');
 
-## connect to vectordb
-client = vectordb.Client(
-  host='localhost',
-  port='8888'
-)
+// connect to vectordb
+const client = new vectordb.Client(
+  'http',
+  'localhost',
+  '8888'
+);
+```
 
 ## load and use a database
 client.load_db(db_name="MyDB", db_path="/tmp/epsilla")
